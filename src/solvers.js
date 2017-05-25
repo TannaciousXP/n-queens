@@ -56,23 +56,26 @@ window.countNRooksSolutions = function(n) {
   var row = solution.rows()[count];
   var length = solution.rows().length;
 
-  var renderSolution = function(row) {
+  var renderSolution = function(arr) {
     //toggle first value [1,0,0]                                        
-    for (var i = count; i < row.length; i++) {
+    for (var i = 0; i < length; i++) {
       solution.togglePiece(0, i);
-      // console.dir(solution);
-      if (!solution.hasAnyRooksConflicts()) {
-        count++;
-        if (count === n) {
-          solutionsArr.push(solution.rows());
-        }
-        return renderSolution(row);
-      } else {
-        solution.togglePiece(count, i);
-      }      
-    }  
+    //   // console.dir(solution);
+    //   if (!solution.hasAnyRooksConflicts()) {
+    //     count++;
+    //     if (count === n) {
+    //       solutionsArr.push(solution.rows());
+    //     }
+    //     return renderSolution(row);
+    //   } else {
+    //     solution.togglePiece(count, i);
+    //   }      
+    // }  
+      for (var j = 0; j < length; j++) {
+        solution.togglePiece(i, j);
+    }
   };
-  console.log(solutionsArr);
+  console.log(solutionsArr.rows());
   return solutionsArr.length;
 };
 
