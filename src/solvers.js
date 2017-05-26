@@ -59,7 +59,7 @@ window.countNRooksSolutions = function(n) {
       //toggle peice 
       board.togglePiece(row, i);
       //check if it has conflicts
-      if (!board.hasAnyRooksConflicts()) { 
+      if (!board.hasColConflictAt(i)) { 
         //recurse at next row
         findCombination(row + 1);
       }
@@ -111,7 +111,7 @@ window.findNQueensSolution = function(n) {
   };
 
   findSolution(0);
-  console.log('solution: ' + solutionBoard);
+  //console.log('solution: ' + solutionBoard);
   return solutionBoard; 
 
 };
