@@ -82,33 +82,37 @@ window.findNQueensSolution = function(n) {
   } 
   var solution = new Board({n: n});
   var count = 0;
-  // var row = solution.rows()[count];
   var length = solution.rows().length;
 
-  if (n === 2 || n === 3) {
-    return solution;
+  if (n === 2 ) {
+    return [[], []];
   }
-
+  if (n === 3) {
+    return [[], [], []];
+  }
+  var solutionBoard;
   var findSolution = function(row) {
     //toggle first value [1,0,0]
+    if (row === n) {
+      //increment solutioncount
+      solutionBoard = JSON.parse(JSON.stringify(solution.rows()));
+      return;
+    }
     for (var i = 0; i < length; i++) {
       solution.togglePiece(row, i);
-      // console.dir(solution);
+      
       if (!solution.hasAnyQueensConflicts()) {
-        count++;
-        if (count === n) {
-          return solution;
-        }
-        return findSolution(row + 1);
-      } else {
-        solution.togglePiece(count, i);
-      }      
-    }  
+        findSolution(row + 1);
+      }
+      
+      solution.togglePiece(row, i);      
+    }    
+    
   };
 
-  console.log('Single solution for ' + n + ' queens:', JSON.stringify(solution.rows()));
-  console.log(solution.rows());
-  return findSolution(0).rows(); 
+  findSolution(0);
+  console.log('solution: ' + solutionBoard);
+  return solutionBoard; 
 
 };
 
