@@ -5,10 +5,11 @@ Given an *n x n* chessbord, how many different ways can you place n queens, such
 by Peter X. Tan
 
 ## Use Recursion and consider the following questions:
-[] Given an *n x n* chessboard, how would you place *n rooks* such that none of them are attacking each other?
-[] Given an *n x n* chessboard, how many different ways can you place *n rooks*, such that none of them are attacking each other?
-[] Given an *n x n* chessboard, how would you place *n queens* such that none of them are attacking each other?
-[] Given an *n x n* chessboard, how many different ways can you place *n queens*, such that none of them are attacking each other?
+
+- [] Given an *n x n* chessboard, how would you place *n rooks* such that none of them are attacking each other?
+- [] Given an *n x n* chessboard, how many different ways can you place *n rooks*, such that none of them are attacking each other?
+- [] Given an *n x n* chessboard, how would you place *n queens* such that none of them are attacking each other?
+- [] Given an *n x n* chessboard, how many different ways can you place *n queens*, such that none of them are attacking each other?
 
 ### Algorithms Visualizer
 
